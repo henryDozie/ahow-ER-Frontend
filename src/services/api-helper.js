@@ -9,13 +9,15 @@ const api = axios.create({
 
 // LOGIN
 export const loginUser = async (loginData) => {
+  console.log("logging in!")
+  console.log(loginData)
   const resp = await api.post("/auth", loginData);
   console.log(resp);
   api.defaults.headers.common.authorization = `Bearer ${resp.data.auth_token}`;
   localStorage.setItem("authToken", resp.data.auth_token);
 
   // You are not returning below keys from your restAPI
-  // localStorage.setItem("name", resp.data.user.name);
+  // localStorage.setItem("name", resp.data.user.name);`
   // localStorage.setItem("email", resp.data.user.email);
   return resp.data.user;
 };
@@ -32,7 +34,6 @@ export const registerUser = async (registerData) => {
     // localStorage.setItem("email", resp.data.user.email);
     return resp.data.user;
   } catch (e) {
-    console.log(e.response);
     if (e.response.status === 422) {
       return {
         errorMessage:
