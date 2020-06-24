@@ -38,8 +38,8 @@ class App extends Component {
 
   handleLogin = async (e, loginData) => {
     e.preventDefault();
+    console.log(`App.js ${loginData}`)
     const currentUser = await loginUser(loginData);
-    console.log(currentUser);
     this.setState({ currentUser });
     // localStorage.setItem("authToken");
     // localStorage.setItem("name");
