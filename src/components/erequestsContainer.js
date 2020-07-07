@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Route, withRouter } from 'react-router-dom';
 import { indexErequests, postErequests, putErequests, verifyUser } from '../services/api-helper';
 import ErequestsList from './erequestsList';
-//import SingleErequests from './singleErequests';
+import SingleErequests from './singleErequests';
 import CreateErequestsForm from './createErequestsForm';
 import UpdateErequestsForm from './updateErequestsForm';
 
@@ -54,12 +54,12 @@ class ErequestsContainer extends Component {
           erequests={this.state.erequests}
           />
         )} />
-        {/* <Route exact path="/erequests/:id" render={(props) => (
+        <Route exact path="/erequests/:id" render={(props) => (
           <SingleErequests
           erequestsId={props.match.params.id}
           erequests={this.state.erequests}
           />
-        )} /> */}
+        )} />
         <Route path="/erequests/new" render={() => (
           <CreateErequestsForm
             createErequests={this.createErequests}
