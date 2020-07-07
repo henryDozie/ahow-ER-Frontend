@@ -58,6 +58,13 @@ export const indexErequests = async () => {
   return resp.data;
 };
 
+// GET ONE eRequest
+export const showErequests = async id => {
+  console.log("Show eRequest");
+  const resp = await api.get(`/erequests/${id}`);
+  return resp.data;
+};
+
 //POST a eREQUEST
 export const postErequests = async (postData) => {
   const resp = await api.post("/erequests", postData);
