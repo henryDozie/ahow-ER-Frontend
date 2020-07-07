@@ -44,7 +44,7 @@ class App extends Component {
     // localStorage.setItem("authToken");
     // localStorage.setItem("name");
     // localStorage.setItem("email");
-    this.props.history.push("/home");
+    this.props.history.push("/erequests");
   };
 
   handleLogout = e => {
